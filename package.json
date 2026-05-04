@@ -1,0 +1,21 @@
+{
+  "name": "ihu-iee-exam-monitor",
+  "version": "1.0.0",
+  "description": "Discord bot that monitors IHU - IEE Exam Schedule for changes.",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun --watch index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "discord.js": "^14.26.4"
+  }
+}
