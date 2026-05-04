@@ -29,7 +29,7 @@ export async function checkSchedule(client: Client): Promise<void> {
   }
 
   const eventCount = getEventCount(ical);
-  const now        = new Date().toLocaleString("el-GR", { timeZone: "Europe/Athens" });
+  const now = new Date().toLocaleString("el-GR", { timeZone: "Europe/Athens" });
 
   Logger.info(`Βρέθηκαν ${eventCount} εξετάσεις, έκδοση: ${version}`);
 
@@ -42,8 +42,8 @@ export async function checkSchedule(client: Client): Promise<void> {
 
   // Schedule appeared or updated
   const lastState = getState();
-  const isNew     = !lastState || lastState.eventCount === 0;
-  const isUpdated = lastState && 
+  const isNew = !lastState || lastState.eventCount === 0;
+  const isUpdated = lastState &&
     (lastState.eventCount !== eventCount || lastState.version !== version);
 
   if (isNew) {

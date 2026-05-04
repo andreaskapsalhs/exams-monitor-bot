@@ -9,10 +9,10 @@ export default {
   once: true,
   execute(client: Client) {
     Logger.info(`✅ Το Bot συνδέθηκε ως ${client.user?.tag}`);
-    
+
     const channel = client.channels.cache.get(config.discord.channelId) as TextChannel | undefined;
     const channelName = channel ? `#${channel.name}` : `ID:${config.discord.channelId}`;
-    
+
     Logger.info(`📡 Έλεγχος τελευταίου εξαμήνου κάθε ${config.checkInterval / 60_000} λεπτά στο κανάλι ${channelName}`);
     Logger.info(`🔗 iCal: ${config.urls.ical}`);
 

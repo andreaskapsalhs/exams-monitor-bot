@@ -31,7 +31,7 @@ export async function fetchVersion(url: string = config.urls.program): Promise<s
     });
     if (!res.ok) return "unknown";
     const html = await res.text();
-    
+
     // Regex to find version pattern like: v.0.00 or v.1.10
     const match = html.match(/v\.(\d+\.\d+)/);
     return match ? match[0] : "unknown";

@@ -13,11 +13,11 @@ export default {
     if (message.author.bot || message.content !== "!test") return;
 
     Logger.info(`Εκτέλεση δοκιμής (!test) από τον χρήστη ${message.author.tag}`);
-    
+
     // Use a previous semester (for example: sem_id=49 / 2025-26ΧΕΙΜ) for testing data
     const testIcalUrl = "https://www.iee.ihu.gr/exams-program/ical.php?full=1&sem_id=49";
     const testVersionUrl = "https://www.iee.ihu.gr/exams-program/program.php?full=1&sem_id=49";
-    
+
     const [icalRes, versionRes] = await Promise.all([
       fetchICal(testIcalUrl),
       fetchVersion(testVersionUrl)
@@ -29,9 +29,8 @@ export default {
     }
 
     const eventCount = getEventCount(icalRes);
-
     const embed = buildScheduleEmbed(eventCount, versionRes);
-    
+
     await message.reply({
       content: "🧪 **TEST ΕΙΔΟΠΟΙΗΣΗ:** (Αυτά είναι εικονικά δεδομένα από προηγούμενο εξάμηνο)",
       embeds: [embed],
